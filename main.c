@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
+#include <time.h>
+#include <windows.h>
+// #include <conio.h> // Adicionando a biblioteca correta para usar getch()
 
 #define altura 25
 #define largura 50
 
 char cenario[altura][largura], jogador[50];
-int pontos = 1000;
+int pontos = 1000, fimX, fimY;
 
 void criarCen(int nivel)
 {
@@ -14,7 +17,7 @@ void criarCen(int nivel)
 	{
 	case 0:
 		strcpy(cenario[0], "|||||||||||||||||||||||||");
-		strcpy(cenario[1], "|..||||||||||||||||||||||");
+		strcpy(cenario[1], "|...|||||||||||||||||||||");
 		strcpy(cenario[2], "||.||||||||||||||||||||||");
 		strcpy(cenario[3], "||.||||||||||||||||||||||");
 		strcpy(cenario[4], "||.||||||||||||||||||||||");
@@ -96,7 +99,7 @@ void criarCen(int nivel)
 
 void exibirCen(int x, int y)
 {
-	// system("cls");
+	system("cls"); // Adicionando a limpeza de tela
 	int i, j;
 
 	for (i = 0; i < altura; i++)
@@ -109,7 +112,7 @@ void exibirCen(int x, int y)
 			}
 			else
 			{
-				printf(" %c", cenario[i][j]);
+				printf("%c", cenario[i][j]);
 			}
 		}
 		printf("\n");
@@ -122,75 +125,75 @@ void andar(int *x, int *y)
 	int auxX = *x, auxY = *y;
 	while (1)
 	{
-		move =
-			printf("passou");
+		move = getch();
 		switch (move)
 		{
 		case 'w':
-			auxY--;
+			if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY - 1][auxX] != '|')
+			{
+				auxY--;
+			}
 			break;
 		case 's':
-			auxY++;
+			if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY + 1][auxX] != '|')
+			{
+				auxY++;
+			}
 			break;
 		case 'a':
-			auxX--;
+			if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY][auxX - 1] != '|')
+			{
+				auxX--;
+			}
 			break;
 		case 'd':
-			auxX++;
+			if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY][auxX + 1] != '|')
+			{
+				auxX++;
+			}
 			break;
+		case 'q':
+			close();
+			return; // Adicionando retorno para sair do loop
 		default:
-			return 0;
+			break;
 		}
 
-		if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY][auxX] == '.')
+		if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY][auxX] != '|')
 		{
+			gotoxy(*x, *y);
+			printf(". ");
+
+			gotoxy(auxX, auxY);
 			*x = auxX;
 			*y = auxY;
-			
-			
-			//break;
+			printf(":)");
 		}
+		else
+		{
+		}
+
+		if (auxX == fimX && auxY == fimY) break;
 	}
 }
 
-int moverJogador(int *x, int *y, char move)
+/*void close()
 {
-	int auxX = *x, auxY = *y;
+	printf("\nQue pena, você desistiu do jogo!\n");
+}*/
 
-	switch (move)
-	{
-	case 'w':
-		auxY--;
-		break;
-	case 's':
-		auxY++;
-		break;
-	case 'a':
-		auxX--;
-		break;
-	case 'd':
-		auxX++;
-		break;
-	default:
-		return 0;
-	}
-
-	if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY][auxX] == '.')
-	{
-		*x = auxX;
-		*y = auxY;
-
-		return 1;
-	}
-
-	return 0;
+void gotoxy(int x, int y)
+{
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
 void jogar(int nivel)
 {
-	// char move;
-	int x, y, fimX, fimY;
-iniciar:
+	int x, y;
+
 	switch (nivel)
 	{
 	case 0:
@@ -227,42 +230,21 @@ iniciar:
 
 	criarCen(nivel);
 	exibirCen(x, y);
-	printf("Pontua??o: %d  | Jogador: %s\n Para mover, utilize o modo WASD(^<v>). Aperte q para sair.", pontos, jogador);
+	printf("Pontuação: %d  | Jogador: %s\n Para mover, utilize o modo WASD(^<v>). Aperte q para sair.", pontos, jogador);
 	andar(&x, &y);
 
-	/*while (nivel < 5)
-	{
-
-		printf("Pontua??o: %d  | Jogador: %s\n Para mover, utilize o modo WASD(^<v>). Aperte q para sair.", pontos, jogador);
-		move = getch();
-		if (move == 'q')
-		{
-			printf("\nQue pena, voc? desistiu do jogo!\n");
-			break;
-		}
-		if (moverJogador(&x, &y, move))
-		{
-			pontos--;
-			if (x == fimX && y == fimY)
-			{
-				printf("N?vel %d completo! Pontua??o final: %d", nivel + 1, pontos);
-				nivel++;
-				goto iniciar;
-			}
-		}
-	}*/
+	printf("Outro nivel porra");
+	system("pause");
 }
 
 int main()
 {
 	setlocale(LC_ALL, "Portuguese");
 	int nivel = 0;
-	printf("Ol?, jogador(a)! Digite seu nickname: ");
+	printf("Olá, jogador(a)! Digite seu nickname: ");
 	scanf("%s", jogador);
 
 	jogar(nivel);
-
-	// while(nivel <5){ jogar(nivel); nivel++;}
 
 	return 0;
 }
