@@ -3,7 +3,7 @@
 #include <locale.h>
 #include <time.h>
 #include <windows.h>
-// #include <conio.h> // Adicionando a biblioteca correta para usar getch()
+#include <conio.h> // Biblioteca correta para usar getch()
 
 #define altura 25
 #define largura 50
@@ -108,7 +108,11 @@ void exibirCen(int x, int y)
 		{
 			if (i == y && j == x)
 			{
-				printf(":)");
+				printf("O");
+			}
+			else if (cenario[i][j] == '.')
+			{
+				printf(" ");
 			}
 			else
 			{
@@ -126,35 +130,49 @@ void andar(int *x, int *y)
 	while (1)
 	{
 		move = getch();
+		if (move == 'q')
+		{
+			char resp;
+			printf("Você tem certeza que deseja sair? Você perderá seu progresso. (s/n)\n");
+			scanf(" %c", &resp);
+			if (resp == 's')
+			{
+				printf("\nQue pena, você desistiu do jogo!\n");
+				exit(0); // Encerrando o programa
+			}
+			else if (resp != 'n')
+			{
+				printf("Não entendi :O\n");
+				continue;
+			}
+		}
+
 		switch (move)
 		{
 		case 'w':
-			if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY - 1][auxX] != '|')
+			if (auxY > 0 && cenario[auxY - 1][auxX] != '|')
 			{
 				auxY--;
 			}
 			break;
 		case 's':
-			if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY + 1][auxX] != '|')
+			if (auxY < altura - 1 && cenario[auxY + 1][auxX] != '|')
 			{
 				auxY++;
 			}
 			break;
 		case 'a':
-			if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY][auxX - 1] != '|')
+			if (auxX > 0 && cenario[auxY][auxX - 1] != '|')
 			{
 				auxX--;
 			}
 			break;
 		case 'd':
-			if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY][auxX + 1] != '|')
+			if (auxX < largura - 1 && cenario[auxY][auxX + 1] != '|')
 			{
 				auxX++;
 			}
 			break;
-		case 'q':
-			close();
-			return; // Adicionando retorno para sair do loop
 		default:
 			break;
 		}
@@ -162,25 +180,22 @@ void andar(int *x, int *y)
 		if (auxX >= 0 && auxX < largura && auxY >= 0 && auxY < altura && cenario[auxY][auxX] != '|')
 		{
 			gotoxy(*x, *y);
-			printf(". ");
+			printf(" ");
 
 			gotoxy(auxX, auxY);
 			*x = auxX;
 			*y = auxY;
-			printf(":)");
-		}
-		else
-		{
+			printf("O");
 		}
 
-		if (auxX == fimX && auxY == fimY) break;
+		if (auxX == fimX && auxY == fimY)
+		{
+			gotoxy(1, 120);
+			printf("Você alcançou o fim do nível!\n");
+			break;
+		}
 	}
 }
-
-/*void close()
-{
-	printf("\nQue pena, vocÃª desistiu do jogo!\n");
-}*/
 
 void gotoxy(int x, int y)
 {
@@ -230,21 +245,21 @@ void jogar(int nivel)
 
 	criarCen(nivel);
 	exibirCen(x, y);
-	printf("PontuaÃ§Ã£o: %d  | Jogador: %s\n Para mover, utilize o modo WASD(^<v>). Aperte q para sair.", pontos, jogador);
+	printf("Pontuação: %d  | Jogador: %s | Nível: %d\nPara mover, utilize o modo WASD(^<v>). Aperte q para sair.\n", pontos, jogador, nivel);
 	andar(&x, &y);
-
-	printf("Outro nivel porra");
-	system("pause");
 }
 
 int main()
 {
 	setlocale(LC_ALL, "Portuguese");
 	int nivel = 0;
-	printf("OlÃ¡, jogador(a)! Digite seu nickname: ");
+	printf("Olá, jogador(a)! Digite seu nickname: ");
 	scanf("%s", jogador);
 
-	jogar(nivel);
-
+	while (nivel < 5)
+	{
+		jogar(nivel);
+		nivel++;
+	}
 	return 0;
 }
