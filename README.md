@@ -53,3 +53,13 @@ Para compilar e executar o programa, siga os seguintes passos:
 ```bash
 ./labirinto
 ```
+
+## Contribuidores
+
+- [Keila Alves](https://github.com/Keilaalves1803)
+- [Matheus Lopes](https://github.com/Mathlps)
+- [Talia Moura](https://github.com/TahMoura)
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
