@@ -64,7 +64,7 @@ Para compilar e executar o programa, siga os seguintes passos:
    ./labirinto
    ```
 
-Ou baixe e execute o **main.exe**, localizado dentro do diretorio **output**
+Ou baixe e execute o **main.exe**, localizado dentro do diretorio **output**.
 
 ## Contribuidores
 
