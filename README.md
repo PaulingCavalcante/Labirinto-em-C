@@ -56,9 +56,9 @@ Para compilar e executar o programa, siga os seguintes passos:
 
 ## Contribuidores
 
-- [Keila Alves](https://github.com/Keilaalves1803)
-- [Matheus Lopes](https://github.com/Mathlps)
-- [Talia Moura](https://github.com/TahMoura)
+- <a href="https://github.com/Keilaalves1803" target="_blank">Keila Alves</a>
+- <a href="https://github.com/Mathlps" target="_blank">Matheus Lopes</a>
+- <a href="https://github.com/TahMoura" target="_blank">Talia Moura</a>
 
 ## Licença
 
