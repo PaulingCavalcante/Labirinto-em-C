@@ -2,7 +2,7 @@
 
 O projeto consiste na implementação de um jogo de labirinto, onde o objetivo é manobrar um personagem do início até a saída do labirinto, percorrendo o menor caminho possível.
 
-## Breve apresentação
+## Breve Apresentação
 
 Somos alunos do Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, Campus Bragança Paulista, e fomos desafiados a desenvolver este projeto como parte da obtenção de nota e apresentação do mesmo para a turma.
 
@@ -35,8 +35,9 @@ O jogo representa o desenho de um caminho (semelhante aos passatempos de jornais
 
 ## Estrutura do Projeto
 
-1. **main.c**: Arquivo principal do código que contém a lógica do jogo.
+1. **[main.c](https://github.com/PaulingCavalcante/Labirinto-em-C/blob/main/main.c)**: Arquivo principal do código que contém a lógica do jogo.
 2. **image.png**: Imagem de exemplo do labirinto.
+   <img src="https://i.ibb.co/TMVjChY/image.png" alt="Labirinto" border="0"></a>
 
 ## Como Executar
 
