@@ -4,7 +4,7 @@ O projeto consiste na implementação de um jogo de labirinto, onde o objetivo �
 
 ## Breve Apresentação
 
-Somos alunos do Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, Campus Bragança Paulista, e fomos desafiados a desenvolver este projeto como parte da obtenção de nota e apresentação do mesmo para a turma.
+Este projeto consiste na implementação de um jogo de labirinto desenvolvido como parte de um trabalho acadêmico no Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, Campus Bragança Paulista.
 
 ## Descrição do Projeto
 
@@ -17,12 +17,17 @@ O jogo representa o desenho de um caminho (semelhante aos passatempos de jornais
 - **Dimensões dos Caminhos**: Os caminhos possuem dimensões de 100 x 25 caracteres e devem apresentar mais de um caminho possível para a saída.
 - **Opções de Caminhos**: O jogo possui no mínimo 5 opções de caminhos, com níveis de dificuldades distintos.
 - **Exibição e Navegação**: 
-  - Utilize matrizes e padrões para representação do labirinto na tela do usuário.
+  - Utilizamos matrizes e padrões para representação do labirinto na tela do usuário.
   - Para navegação, use as teclas: 
     - `D` (mover para a direita)
     - `A` (mover para a esquerda)
     - `W` (mover para cima)
     - `S` (mover para baixo)
+
+- **Elementos:**
+  - **`O`:** Representa o jogador dentro do labirinto.
+  - **`|`:** Representa as paredes do labirinto, limitando o espaço onde o jogador pode se movimentar.
+  - **` `:** (espaço em branco): Indica áreas livres dentro do labirinto, onde o jogador pode se mover.
 - **Sistema de Pontuação**: 
   - Cada movimento reduz 1 ponto do score inicial.
 - **Registro de Jogador**: 
@@ -36,8 +41,8 @@ O jogo representa o desenho de um caminho (semelhante aos passatempos de jornais
 ## Estrutura do Projeto
 
 1. **[main.c](https://github.com/PaulingCavalcante/Labirinto-em-C/blob/main/main.c)**: Arquivo principal do código que contém a lógica do jogo.
-2. **image.png**: Imagem de exemplo do labirinto.
-   <img src="https://i.ibb.co/TMVjChY/image.png" alt="Labirinto" border="0">
+2. **[image.png](https://i.ibb.co/TMVjChY/image.png)**: Imagem de exemplo do labirinto. <br>
+   <img src="https://i.ibb.co/TMVjChY/image.png" alt="Labirinto" border="0" height="50%">
 
 ## Como Executar
 
@@ -54,11 +59,12 @@ Para compilar e executar o programa, siga os seguintes passos:
    gcc main.c -o labirinto
    ```
 
-3. Execute o programa:
-  ```bash
-  ./labirinto
-  ```
+2. Execute o programa:
+   ```bash
+   ./labirinto
+   ```
 
+Ou baixe e execute o **main.exe**, localizado dentro do diretorio **output**
 ## Contribuidores
 
 - [Keila Alves](https://github.com/Keilaalves1803)
