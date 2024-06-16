@@ -1,6 +1,10 @@
 # Labirinto
 
-Somos alunos do Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, Campus Bragança Paulista, e fomos desafiados a desenvolver este projeto como parte da obtenção de nota e apresentação. O projeto consiste na implementação de um jogo de labirinto, onde o objetivo é manobrar um personagem do início até a saída do labirinto, percorrendo o menor caminho possível.
+O projeto consiste na implementação de um jogo de labirinto, onde o objetivo é manobrar um personagem do início até a saída do labirinto, percorrendo o menor caminho possível.
+
+## Breve apresentação
+
+Somos alunos do Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, Campus Bragança Paulista, e fomos desafiados a desenvolver este projeto como parte da obtenção de nota e apresentação do mesmo para a turma.
 
 ## Descrição do Projeto
 
