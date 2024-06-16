@@ -40,5 +40,5 @@ Para compilar e executar o programa, siga os seguintes passos:
 
 1. Clone o repositório:
    ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone <https://github.com/PaulingCavalcante/Labirinto-em-C.git>
    cd <NOME_DO_REPOSITORIO>
