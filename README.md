@@ -54,9 +54,9 @@ Para compilar e executar o programa, siga os seguintes passos:
    ```
 
 3. Execute o programa:
-```bash
-./labirinto
-```
+  ```bash
+  ./labirinto
+  ```
 
 ## Contribuidores
 
