@@ -19,10 +19,10 @@ O jogo representa o desenho de um caminho (semelhante aos passatempos de jornais
 - **Exibição e Navegação**: 
   - Utilizamos matrizes e padrões para representação do labirinto na tela do usuário.
   - Para navegação, use as teclas: 
-    - `D` (mover para a direita)
-    - `A` (mover para a esquerda)
     - `W` (mover para cima)
+    - `A` (mover para a esquerda)
     - `S` (mover para baixo)
+    - `D` (mover para a direita)
 
 - **Elementos:**
   - **`O`:** Representa o jogador dentro do labirinto.
