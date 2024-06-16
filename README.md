@@ -36,7 +36,7 @@ O jogo representa o desenho de um caminho (semelhante aos passatempos de jornais
   - O jogador pode desistir do jogo a qualquer momento.
 - **Exibição de Pontuação**:
   - Ao final do jogo, será revelada a pontuação do jogador.
-  - Será exibida uma lista com as 10 maiores pontuações e o nome dos jogadores que desistiram do jogo.
+  - Será exibida uma lista com as 10 maiores pontuações.
 
 ## Estrutura do Projeto
 
@@ -65,6 +65,7 @@ Para compilar e executar o programa, siga os seguintes passos:
    ```
 
 Ou baixe e execute o **main.exe**, localizado dentro do diretorio **output**
+
 ## Contribuidores
 
 - [Keila Alves](https://github.com/Keilaalves1803)
