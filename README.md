@@ -42,3 +42,14 @@ Para compilar e executar o programa, siga os seguintes passos:
    ```bash
    git clone <https://github.com/PaulingCavalcante/Labirinto-em-C.git>
    cd <NOME_DO_REPOSITORIO>
+   
+2. Clone o repositório:
+   ```bash
+   gcc main.c -o labirinto
+
+3. Execute o programa:
+  ```bash
+./labirinto
+
+ 
+   
