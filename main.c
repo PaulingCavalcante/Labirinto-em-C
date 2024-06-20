@@ -201,19 +201,19 @@ void andar(int *x, int *y)
 				char resp;
 
 				gotoxy(0, altura + 2);
-				printf("Você tem certeza que deseja sair? Você perderá seu progresso. (s/n)\n");
+				printf("VocÃª tem certeza que deseja sair? VocÃª perderÃ¡ seu progresso. (s/n)\n");
 
 				ocultarCursor(1);
 
 				scanf(" %c", &resp);
 				if (resp == 's' || resp == 'S')
 				{
-					printf("\nQue pena, você desistiu do jogo!\n");
+					printf("\nQue pena, vocÃª desistiu do jogo!\n");
 					exit(0);
 				}
 				else if (resp != 'n' && resp != 'N')
 				{
-					printf("Não entendi :O\n");
+					printf("NÃ£o entendi :O\n");
 					continue;
 				}
 
@@ -276,7 +276,7 @@ void andar(int *x, int *y)
 			gotoxy(0, altura - 1);
 			char continuar;
 			gotoxy(0, 30);
-			printf("Você alcançou o fim do níevel!\nDeseja continuar? (s/qualquer tecla para sair):");
+			printf("VocÃª alcanÃ§ou o fim do nÃ­evel!\nDeseja continuar? (s/qualquer tecla para sair):");
 			scanf(" %c", &continuar);
 			if (continuar == 's' || continuar == 'S')
 			{
@@ -347,7 +347,7 @@ enc:
 	}
 	else if (encerrar != 'n' || encerrar != 'N')
 	{
-		printf("Não entendi");
+		printf("NÃ£o entendi");
 		goto enc;
 	}
 	else
@@ -396,7 +396,7 @@ void jogar(int nivel, char nome[50])
 
 	criarCen(nivel);
 	exibirCen(x, y);
-	printf("Pontuação: %d  | Jogador: %s | Nível: %d\nPara mover, utilize o modo WASD(^<v>). Aperte q para sair.\n", pontos, nome, nivel + 1);
+	printf("PontuaÃ§Ã£o: %d  | Jogador: %s | NÃ­vel: %d\nPara mover, utilize o modo WASD(^<v>). Aperte q para sair.\n", pontos, nome, nivel + 1);
 	andar(&x, &y);
 }
 
@@ -405,14 +405,13 @@ void ocultarCursor(int check)
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO cursorInfo;
 
-	// Obt?m as informa??es atuais do cursor
 	GetConsoleCursorInfo(hConsole, &cursorInfo);
-	// Define a visibilidade do cursor como FALSE para ocult?-lo
+	
 	if (check == 0)
 		cursorInfo.bVisible = FALSE;
 	else
 		cursorInfo.bVisible = TRUE;
-	// Aplica a configura??o atualizada
+	
 	SetConsoleCursorInfo(hConsole, &cursorInfo);
 }
 
@@ -422,7 +421,7 @@ int main()
 	int nivel = 0;
 	pontos = 5000;
 	char nome[50];
-	printf("Olá, jogador(a)! Digite seu nickname: ");
+	printf("OlÃ¡, jogador(a)! Digite seu nickname: ");
 	scanf("%s", nome);
 
 	ocultarCursor(0);
